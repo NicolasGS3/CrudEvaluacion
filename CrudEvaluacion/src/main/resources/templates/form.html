@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/save}" th:object=${persona} method="POST">
+				<div class="card">
+					<div class="card-header">
+					<h3>Modulo Persona<a th:href="@{/listar}" class="btn btn-success" style="margin-left: 45%">Inicio</a></h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<labe>ID</labe>
+							<input th:field="*{id}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe>CEDULA</labe>
+							<input th:field="*{documento}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe>NOMBRE</labe>
+							<input th:field="*{nombre}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe>APELLIDO</labe>
+							<input th:field="*{apellido}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe for="fcNacimiento">FECHA</labe>
+							<input id="fcNacimiento" type="date">
+						</div>
+						<div class="form-group">
+							<labe>CIUDAD</labe>
+							<input th:field="*{ciudad}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe>EMAIL</labe>
+							<input th:field="*{email}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe>TELEFONO</labe>
+							<input th:field="*{telefono}" type="text" class="form-control"/>
+						</div>
+						<div class="form-group">
+							<labe>OCUPACION</labe>
+							<input th:field="*{ocupacion}" type="text" class="form-control"/>
+						</div>
+					</div>
+					<div class="card-footer">
+					<input type="submit" value="Guardar" class="btn btn-success">
+					
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
